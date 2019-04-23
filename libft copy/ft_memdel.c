@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmistie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 00:12:05 by rmistie           #+#    #+#             */
-/*   Updated: 2019/04/23 19:18:00 by rmistie          ###   ########.fr       */
+/*   Created: 2019/04/19 15:20:14 by rmistie           #+#    #+#             */
+/*   Updated: 2019/04/24 01:19:22 by rmistie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+void	ft_memdel(void **ap)
 {
-	char	*ss;
-	int		i;
-	int		j;
-	int		k;
-
-	k = 0;
-	i = 0;
-	if (!s)
-		return (0);
-	j = ft_strlen(s);
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	j--;
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j--;
-	if (j < i)
-		j = i;
-	if (!(ss = ft_strnew(j - i + 1)))
-		return (NULL);
-	while (i + k - 1 < j)
-	{
-		ss[k] = s[i + k];
-		k++;
-	}
-	return (ss);
+	if (!ap)
+		return ;
+	free(*ap);
+	*ap = NULL;
 }

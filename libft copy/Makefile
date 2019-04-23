@@ -6,7 +6,7 @@
 #    By: rmistie <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/12 12:59:27 by rmistie           #+#    #+#              #
-#    Updated: 2019/04/22 17:04:12 by rmistie          ###   ########.fr        #
+#    Updated: 2019/04/23 20:18:55 by rmistie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,12 +36,12 @@ HEADERS = libft.h
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC) -I *.h
+	gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADERS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJECTS)
 
 fclean: clean
 	/bin/rm -f $(NAME)
