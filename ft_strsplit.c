@@ -6,33 +6,11 @@
 /*   By: rmistie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 18:13:40 by rmistie           #+#    #+#             */
-/*   Updated: 2019/04/23 20:23:46 by rmistie          ###   ########.fr       */
+/*   Updated: 2019/04/24 18:25:46 by rmistie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	size_t		cnwords(const char *s, char c)
-{
-	size_t i;
-	size_t j;
-
-	i = 0;
-	j = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (!s[i])
-			break ;
-		j++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (j);
-}
 
 static	size_t		wlen(const char *s, char c)
 {
@@ -75,7 +53,7 @@ char				**ft_strsplit(char const *s, char c)
 
 	if (!s)
 		return (0);
-	i = (cnwords(s, c));
+	i = (ft_countwords(s, c));
 	ss = (char**)malloc(sizeof(char*) * i + 1);
 	if (ss == NULL)
 		return (NULL);

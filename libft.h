@@ -6,13 +6,12 @@
 /*   By: rmistie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 00:29:15 by rmistie           #+#    #+#             */
-/*   Updated: 2019/04/22 23:37:40 by rmistie          ###   ########.fr       */
+/*   Updated: 2019/04/24 19:22:05 by rmistie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -68,5 +67,10 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+size_t	ft_countwords(const char *s, char c);
+int		ft_whitespace(int c);
+int		ft_isupper(int c);
+int		ft_islower(int c);
+size_t	ft_countsim(int n);
 
 #endif

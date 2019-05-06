@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_countsim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmistie <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 23:57:56 by rmistie           #+#    #+#             */
-/*   Updated: 2019/04/24 19:16:30 by rmistie          ###   ########.fr       */
+/*   Created: 2019/04/24 19:07:37 by rmistie           #+#    #+#             */
+/*   Updated: 2019/04/24 19:12:24 by rmistie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+size_t	ft_countsim(int n)
 {
-	if ((ft_isupper(c) == 1) || (ft_islower(c) == 1))
-		return (1);
-	return (0);
+	size_t i;
+	size_t d;
+
+	d = 0;
+	i = 1;
+	if (n < 0)
+	{
+		d = (size_t)n * -1;
+		i = 2;
+	}
+	else
+		d = (size_t)n;
+	while (d >= 10)
+	{
+		d /= 10;
+		i++;
+	}
+	return (i);
 }
